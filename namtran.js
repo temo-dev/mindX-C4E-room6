@@ -1,4 +1,4 @@
-// Bài 1
+// // Bài 1
 function PTB2(a, b, c) {
   let x = b * b - 4 * a * c;
   if (x < 0) {
@@ -12,49 +12,27 @@ function PTB2(a, b, c) {
     return `Phương trình có hai nghiệm phân biệt x1 = ${x1}, x2 = ${x2}`;
   }
 }
+console.log(PTB2(1,2,1))
 
-let a = 1;
-let b = 2;
-let c = 3;
+// // Bài 2
+let a = 5;
+let b = 10;
+let c = 15;
 
-let KQ = PTB2(a, b, c);
-console.log(KQ);
+let max = Math.max(a, b, c);
 
-// Bài 2
-let a = 20;
-let b = 20;
-let c = 20;
+console.log("Số lớn nhất là: " + max);
 
-  if (a >= b && a >= c)
-  {
-    console.log("Số lớn nhất là a: " + a);
-  }
-  else if (b >= a && b >= c)
-  {
-    console.log("Số lớn nhất là b: " + b);
-  }
-  else
-  {
-    console.log("Số lớn nhất là c: " + c);
-  }
-
-// Bài 3
-let a = 3;
-let b = 4;
-let c = 5;
-
-if (a + b > c && b + c > a && c + a > b) {
+// // Bài 3
+function kiemTraTamGiac(a, b, c) {
   if (a === b && b === c) {
-    console.log("Tam giác đều");
-  } else if (a === b || b === c || c === a) {
-    console.log("Tam giác cân");
-  } else if (a*a + b*b === c*c || b*b + c*c === a*a || c*c + a*a === b*a) {
-    console.log("Tam giác vuông");
-  } else if (a*a + b*b < c*c || b*b + c*c < a*a || c*c + a*a < b*b) {
-    console.log("Tam giác tù");
-  } else {
-    console.log("Tam giác nhọn");
+    return "Tam giác đều";
+  } else if (a === b || b === c || a === c) {
+    return "Tam giác cân";
+  } else if (a*a + b*b === c*c || a*a + c*c === b*b || b*b + c*c === a*a) {
+    return "Tam giác vuông";
+  } else if (a !== b && b !== c) {
+    return "Tam giác thường";
   }
-} else {
-  console.log("Ba cạnh này không tạo thành một tam giác");
 }
+console.log(kiemTraTamGiac(2,4,3));
